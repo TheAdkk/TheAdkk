@@ -1,9 +1,12 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:0369a1&height=180&section=header&text=TheAdkk&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Rust%20%7C%20TypeScript%20%7C%20Creative%20Coding&descAlignY=55" alt="header" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,100:0369a1&height=180&section=header&text=TheAdkk&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Rust%20%7C%20TypeScript%20%7C%20Python&descAlignY=55" alt="header" />
 </div>
 
 <h1 align="center">Hey, I'm Oswaldo Cruz (TheAdkk)</h1>
-<p align="center">Creative developer, passionate about trading, Python, and Astro.</p>
+
+<p align="center">
+<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=22&pause=1000&color=0EA5E9&center=true&vCenter=true&width=560&height=45&lines=Rust+%7C+TypeScript+%7C+Python;Trading+systems+%26+market+tooling;romaco-mcp+%E2%80%94+AI+agents+on+the+chart;dalia+%E2%80%94+audio-reactive+visuals" alt="Typing SVG" />
+</p>
 
 <p align="center">
 <a href="https://github.com/TheAdkk?tab=followers"><img alt="Followers" src="https://img.shields.io/github/followers/TheAdkk?style=for-the-badge&logo=github&label=Followers"></a>
