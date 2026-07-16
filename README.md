@@ -40,40 +40,51 @@
 <img src="github-metrics.svg" alt="Metrics" />
 </p>
 
-## 3D test
+<!-- ===========================================================================
+GARAGE / 3D MODEL - parked until the new model lands
+
+GitHub renders a fenced ```stl block as a REAL interactive 3D viewer, right here
+in the profile README (drag to rotate, scroll to zoom). Verified end to end.
+To switch it on: uncomment the heading below and paste ASCII STL inside the block.
+
+## Garage
+
+<sub>Drag to rotate. Scroll to zoom.</sub>
 
 ```stl
-solid cube_corner
-  facet normal 0.0 -1.0 0.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 1.0 0.0 0.0
-      vertex 0.0 0.0 1.0
-    endloop
-  endfacet
-  facet normal 0.0 0.0 -1.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 0.0 1.0 0.0
-      vertex 1.0 0.0 0.0
-    endloop
-  endfacet
-  facet normal -1.0 0.0 0.0
-    outer loop
-      vertex 0.0 0.0 0.0
-      vertex 0.0 0.0 1.0
-      vertex 0.0 1.0 0.0
-    endloop
-  endfacet
-  facet normal 0.577 0.577 0.577
-    outer loop
-      vertex 1.0 0.0 0.0
-      vertex 0.0 1.0 0.0
-      vertex 0.0 0.0 1.0
-    endloop
-  endfacet
-endsolid
+solid car
+  ... paste ASCII STL facets here ...
+endsolid car
 ```
+
+--- HARD-WON NOTES, do not relearn these ---
+
+1. EXPORT AS GLB. Never OBJ. The 3D-ripper OBJ converter drops node transforms:
+   proportions came out 0.69 width/length vs 0.47 real, and the mesh arrived as
+   4331 disconnected shards that no decimator can collapse (floors at 18k faces).
+   GLB/glTF keeps transforms + material names. GLB is one self-contained file.
+
+2. DROP THE INTERIOR. Filter out every material whose name starts with "INT_"
+   (exact prefix - careful, a substring match on "INT" also eats CARPA-INT).
+   On the Huracan that was ~79k of 209k triangles: dashboard, cables, seats,
+   alcantara, even the RPM LCD. All invisible from outside.
+
+3. BUDGET. ASCII STL costs ~135 bytes per face at 2 decimals.
+   ~700 faces  = 92 KB   wing floats, struts gone
+   ~1200 faces = 158 KB  wing WITH struts + mirrors  <- sweet spot
+   ~2000 faces = 265 KB  splitter and wheels defined
+   Rendering was only ever verified at 627 bytes. Large sizes are untested.
+
+4. IF IT WONT DECIMATE: weld vertices, then voxelize (trimesh .voxelized(pitch)
+   -> .fill() -> .marching_cubes) to force one watertight shell, then simplify.
+   Only needed for shredded rips. A clean model should decimate directly.
+
+5. STL HAS NO COLOR. Always solid grey. For a yellow car you need a rendered GIF
+   or a real viewer on TheAdkk.github.io instead.
+
+6. Z IS UP in the GitHub viewer. glTF here already had Z up; the OBJ needed a
+   +90deg rotation about X.
+============================================================================ -->
 
 ## Contact
 - Email: oswaldo@romaco.io
